@@ -1,0 +1,18 @@
+172.18.101.24 ansible_user=root ansible_password=ren  
+172.18.101.25 ansible_user=root ansible_password=ren  
+
+[etcds]
+172.18.101.24
+
+[masters]
+172.18.101.24
+
+[nodes]
+172.18.101.25
+
+[kube-cluster:children]
+masters
+nodes
+
+[kube-addon:children]
+masters
