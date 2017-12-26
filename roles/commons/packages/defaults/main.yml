@@ -3,28 +3,28 @@
 
 bases:
   kubelet:
-    url: "https://storage.googleapis.com"
+    url: "https://gitee.com/liu-rui/repo/raw/master/k8s"
     version: "{{ kube_version }}"
   kubectl:
-    url: "https://storage.googleapis.com"
+    url: "https://gitee.com/liu-rui/repo/raw/master/k8s"
     version: "{{ kube_version }}"
   etcd:
     url: "https://github.com"
     version: 3.2.9
   docker:
-    url: "https://download.docker.com"
+    url: "https://gitee.com/liu-rui/repo/raw/master/docker"
     version: 17.09.0-ce
   cri_containerd:
     url: "https://github.com"
     version: 1.0.0-alpha.1
   cni:
-    url: "https://github.com"
+    url: "https://gitee.com/liu-rui/repo/raw/master/cni"
     version: 0.6.0
   calicoctl:
-    url: "https://github.com"
+    url: "https://gitee.com/liu-rui/repo/raw/master/calicoctl"
     version: 1.6.0
   helm:
-    url: "https://kubernetes-helm.storage.googleapis.com"
+    url: "https://gitee.com/liu-rui/repo/raw/master/helm"
     version: 2.7.0
   cfssl:
     url: "https://pkg.cfssl.org"
@@ -40,14 +40,14 @@ downloads:
     name: kubectl
     description: "Kubernetes CLI tool"
     dir: /opt/kubernetes
-    url: "{{ bases.kubectl.url }}/kubernetes-release/release/v{{ bases.kubectl.version }}/bin/linux/amd64"
+    url: "{{ bases.kubectl.url }}/v{{ bases.kubectl.version }}"
     symlinks: [ 'kubectl' ]
     file: kubectl
   kubelet:
     name: kubelet
     description: "Kubernetes kubelet component"
     dir: /opt/kubernetes
-    url: "{{ bases.kubelet.url }}/kubernetes-release/release/v{{ bases.kubelet.version }}/bin/linux/amd64"
+    url: "{{ bases.kubelet.url }}/v{{ bases.kubelet.version }}"
     symlinks: [ 'kubelet' ]
     file: kubelet
   etcd:
@@ -63,7 +63,7 @@ downloads:
     name: docker
     description: "Docker engine"
     dir: /opt/cri
-    url: "{{ bases.docker.url }}/linux/static/stable/x86_64"
+    url: "{{ bases.docker.url }}"
     unarchive:
       extra_opt: "['--strip-components=1']"
     symlinks: [ 'docker', 'dockerd', 'docker-containerd', 'docker-containerd-ctr', 'docker-containerd-shim', 'docker-init', 'docker-proxy', 'docker-runc' ]
@@ -81,7 +81,7 @@ downloads:
     name: cni
     description: "Container network interface"
     dir: /opt/cni/bin
-    url: "{{ bases.cni.url }}/containernetworking/plugins/releases/download/v{{ bases.cni.version }}"
+    url: "{{ bases.cni.url }}"
     unarchive:
       extra_opt: "['--strip-components=0']"
     file: "cni-plugins-amd64-v{{ bases.cni.version }}.tgz"
@@ -89,7 +89,7 @@ downloads:
     name: calicoctl
     description: "Calicoctl network plugin"
     dir: /opt/calico
-    url: "{{ bases.calicoctl.url }}/projectcalico/calicoctl/releases/download/v{{ bases.calicoctl.version }}"
+    url: "{{ bases.calicoctl.url }}/v{{ bases.calicoctl.version }}"
     symlinks: [ 'calicoctl' ]
     file: calicoctl
   helm:

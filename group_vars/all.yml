@@ -9,12 +9,12 @@ cri_plugin: docker
 
 # CNI plugin,
 # Supported: calico, flannel, weave, canal or router.
-network: calico
+network: flannel
 pod_network_cidr: 10.244.0.0/16
 
 # CNI opts,
 # flannel(--iface=enp0s8), calico(interface=enp0s8), canal(enp0s8).
-cni_iface: "enp0s8"
+cni_iface: "--iface=enp0s3"
 
 # Kubernetes cluster network.
 cluster_subnet: 10.96.0
@@ -28,7 +28,7 @@ haproxy: true
 keepalived: true # set `lb_vip_address` as keepalived vip, if this enable.
 keepalived_vip_interface: "{{ ansible_default_ipv4.interface }}"
 
-lb_vip_address: 172.16.35.9
+lb_vip_address: 192.168.1.28
 lb_secure_port: 6443
 lb_api_url: "https://{{ lb_vip_address }}:{{ lb_secure_port }}"
 

@@ -2,20 +2,20 @@
 
 images:
   pod_infra: # registry.access.redhat.com/rhel7/pod-infrastructure
-    name: pause
-    repos: gcr.io/google_containers/
+    name: pause-amd64
+    repos: 1313475/
     tag: "3.0"
   apiserver:
     name: kube-apiserver-amd64
-    repos: gcr.io/google_containers/
+    repos: 1313475/
     tag: "v{{ kube_version }}"
   manager: # 'quay.io/attcomdev/kube-controller-manager:v{{ kube_version }}' for ceph storage class
     name: kube-controller-manager-amd64
-    repos: gcr.io/google_containers/
+    repos: 1313475/
     tag: "v{{ kube_version }}"
   scheduler:
     name: kube-scheduler-amd64
-    repos: gcr.io/google_containers/
+    repos: 1313475/
     tag: "v{{ kube_version }}"
   haproxy:
     name: haproxy
