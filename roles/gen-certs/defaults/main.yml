@@ -8,9 +8,9 @@ key:
   algo: rsa
   size: 2048
 info:
-  country: TW
-  state: Taipei
-  locality: "Taipei city"
+  country: CHINA
+  state: CHINA
+  locality: "BeiJing city"
   org_uit: Kubernetes-ansible
   expiry: 87600h
   profile: kubernetes

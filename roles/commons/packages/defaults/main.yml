@@ -3,28 +3,28 @@
 
 bases:
   kubelet:
-    url: "https://gitee.com/liu-rui/repo/raw/master/k8s"
+    url: "{{ local_repository }}/k8s"
     version: "{{ kube_version }}"
   kubectl:
-    url: "https://gitee.com/liu-rui/repo/raw/master/k8s"
+    url: "{{ local_repository }}/k8s"
     version: "{{ kube_version }}"
   etcd:
-    url: "https://github.com"
+    url: "{{ local_repository }}/etcd"
     version: 3.2.9
   docker:
-    url: "https://gitee.com/liu-rui/repo/raw/master/docker"
+    url: "{{ local_repository }}/docker"
     version: 17.09.0-ce
   cri_containerd:
     url: "https://github.com"
     version: 1.0.0-alpha.1
   cni:
-    url: "https://gitee.com/liu-rui/repo/raw/master/cni"
+    url: "{{ local_repository }}/cni"
     version: 0.6.0
   calicoctl:
-    url: "https://gitee.com/liu-rui/repo/raw/master/calicoctl"
+    url: "{{ local_repository }}/calicoctl"
     version: 1.6.0
   helm:
-    url: "https://gitee.com/liu-rui/repo/raw/master/helm"
+    url: "{{ local_repository }}/helm"
     version: 2.7.0
   cfssl:
     url: "https://pkg.cfssl.org"
@@ -54,7 +54,7 @@ downloads:
     name: etcd
     description: "Etcd key/value store"
     dir: /opt/etcd
-    url: "{{ bases.etcd.url }}/coreos/etcd/releases/download/v{{ bases.etcd.version }}"
+    url: "{{ bases.etcd.url }}"
     unarchive:
       extra_opt: "['--strip-components=1']"
     symlinks: [ 'etcd', 'etcdctl' ]

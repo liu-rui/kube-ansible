@@ -88,7 +88,7 @@ spec:
               memory: {{ monitor.grafana.requests.memory }}
           env:
             - name: INFLUXDB_SERVICE_URL
-              value: http://monitoring-influxdb:8086
+              value: http://localhost:8086
             - name: GF_AUTH_BASIC_ENABLED
               value: "false"
             - name: GF_AUTH_ANONYMOUS_ENABLED
